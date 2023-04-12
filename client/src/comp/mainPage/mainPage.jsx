@@ -4,8 +4,7 @@ import styled from "@emotion/styled";
 import MainPageTitle from "./mainPageTitle/mainPageTitle";
 import SwiperBanner from "./swiperBanner/swiperBanner";
 import CandlestickChartMaker from "./chart/CandlestickChartMaker";
-import CandlesticChart from "./chart/candlesticChart";
-import Charts from "./chart/charts";
+import ChartSocket from "./chart/chartSocket";
 function MainPage() {
   return (
     <div>
@@ -16,8 +15,9 @@ function MainPage() {
         <MainPageTitle />
         <SwiperBanner />
         <Chart>
-          <CandlestickChartMaker market="KRW-BTC" />
-          <CandlestickChartMaker market="KRW-DOGE" />
+          {/* <CandlestickChartMaker market="KRW-BTC" socket={socket} />
+          <CandlestickChartMaker market="KRW-DOGE" socket={socket} /> */}
+          <ChartSocket market="KRW-BTC\" />
         </Chart>
       </Body>
     </div>

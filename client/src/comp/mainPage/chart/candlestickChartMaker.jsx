@@ -6,7 +6,7 @@ import CandlesticChart from "./candlesticChart";
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 import styled from "@emotion/styled";
 function CandlestickChartMaker(props) {
-  const { market } = props;
+  const { market, socket } = props;
   const [dailyRecord, setDailyRecord] = useState({
     //하루의 OHLC를 각각의 배열을 만들어서 관리
     OHLC: [],
@@ -34,14 +34,9 @@ function CandlestickChartMaker(props) {
       // 종가  candle.trade_price
       //  전일 종가 대비 변화 금액 change_price
 
+      // 값자체
       const daillyOHLC = {
         time: candle.candle_date_time_utc.substr(0, 10),
-
-        // {
-        //   day: parseInt(candle.candle_date_time_utc.substr(8, 2)),
-        //   month: parseInt(candle.candle_date_time_utc.substr(5, 2)),
-        //   year: parseInt(candle.candle_date_time_utc.substr(0, 4)),
-        // },
         open: candle.opening_price,
         high: candle.high_price,
         low: candle.low_price,
